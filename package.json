@@ -1,6 +1,6 @@
 {
   "name": "monoman",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "pnpm@7.27.0",
   "description": "Monorepo manager.",
   "license": "MIT",
