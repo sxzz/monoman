@@ -1,4 +1,3 @@
-// import { cac } from 'cac'
 import { readFile, unlink, writeFile } from 'node:fs/promises'
 import { loadConfig } from 'unconfig'
 import glob from 'fast-glob'

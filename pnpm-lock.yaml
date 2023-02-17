@@ -6,7 +6,6 @@ specifiers:
   '@sxzz/eslint-config-ts': ^2.4.4
   '@types/node': ^18.13.0
   bumpp: ^8.2.1
-  cac: ^6.7.14
   eslint: ^8.34.0
   eslint-define-config: ^1.15.0
   fast-glob: ^3.2.12
@@ -18,7 +17,6 @@ specifiers:
 
 dependencies:
   '@antfu/utils': 0.7.2
-  cac: 6.7.14
   unconfig: 0.3.7
 
 devDependencies:
@@ -723,6 +721,7 @@ packages:
   /cac/6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
     engines: {node: '>=8'}
+    dev: true
 
   /call-bind/1.0.2:
     resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}

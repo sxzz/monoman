@@ -6,7 +6,3 @@ export function defineConfig(config: Config): Config {
 
 export * from './types'
 export * from './cli'
-
-// const cli = cac('monoman')
-// const parsed = cli.parse()
-// console.log(parsed)
