@@ -1,0 +1,61 @@
+{
+  "name": "monoman",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.27.0",
+  "description": "Monorepo manager.",
+  "license": "MIT",
+  "homepage": "https://github.com/sxzz/monoman#readme",
+  "bugs": {
+    "url": "https://github.com/sxzz/monoman/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxzz/monoman.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsx src/run-cli.ts",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.json,.md",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsup && tsx scripts/postbuild.mts",
+    "test": "vitest",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@antfu/utils": "^0.7.2",
+    "cac": "^6.7.14",
+    "unconfig": "^0.3.7"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config-prettier": "^2.4.4",
+    "@sxzz/eslint-config-ts": "^2.4.4",
+    "@types/node": "^18.13.0",
+    "bumpp": "^8.2.1",
+    "bun": "^0.5.6",
+    "eslint": "^8.34.0",
+    "eslint-define-config": "^1.15.0",
+    "fast-glob": "^3.2.12",
+    "prettier": "^2.8.4",
+    "tsup": "^6.6.2",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.5"
+  },
+  "engines": {
+    "node": ">=14.19.0"
+  }
+}
