@@ -3,7 +3,7 @@ import { readFile, unlink, writeFile } from 'node:fs/promises'
 import { loadConfig } from 'unconfig'
 import glob from 'fast-glob'
 import { toArray } from '@antfu/utils'
-import type { Config } from './types'
+import type { Config, Context } from './types'
 
 export async function runCli() {
   const config = await getConfig()
@@ -14,28 +14,29 @@ export async function runCli() {
       absolute: true,
     })
 
-    for (const file of files) {
-      let contents = await readFile(file, 'utf-8').catch(() => null)
+    for (const filepath of files) {
+      const context: Context = { files, filepath }
+      let contents = await readFile(filepath, 'utf-8').catch(() => null)
       const exists = contents !== null
       if (item.type === 'text') {
         if (item.write) {
-          contents = await item.write(contents)
+          contents = await item.write(contents, context)
         }
       } else if (item.type === 'json') {
         // eslint-disable-next-line unicorn/no-lonely-if
         if (item.write) {
-          contents = JSON.stringify(
-            await item.write(contents ? JSON.parse(contents) : null),
+          contents = `${JSON.stringify(
+            await item.write(contents ? JSON.parse(contents) : null, context),
             null,
             2
-          )
+          )}\n`
         }
       }
 
-      if (contents !== null) {
-        await writeFile(file, contents, 'utf-8')
+      if (contents != null) {
+        await writeFile(filepath, contents, 'utf-8')
       } else if (exists) {
-        await unlink(file)
+        await unlink(filepath)
       }
     }
   }
