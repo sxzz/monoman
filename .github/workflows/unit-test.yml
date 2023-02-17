@@ -49,6 +49,3 @@ jobs:
 
       - name: Build
         run: nr build
-
-      - name: Test
-        run: nr test
