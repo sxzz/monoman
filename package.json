@@ -1,7 +1,7 @@
 {
   "name": "monoman",
   "version": "0.1.2",
-  "packageManager": "pnpm@8.6.10",
+  "packageManager": "pnpm@8.6.11",
   "description": "Monorepo manager.",
   "license": "MIT",
   "homepage": "https://github.com/sxzz/monoman#readme",
@@ -40,15 +40,15 @@
   "dependencies": {
     "@antfu/utils": "^0.7.5",
     "fast-glob": "^3.3.1",
-    "unconfig": "^0.3.9"
+    "unconfig": "^0.3.10"
   },
   "devDependencies": {
     "@sxzz/eslint-config-prettier": "^2.4.6",
     "@sxzz/eslint-config-ts": "^2.4.6",
-    "@types/node": "^20.4.4",
+    "@types/node": "^20.4.5",
     "bumpp": "^9.1.1",
-    "eslint": "^8.45.0",
-    "eslint-define-config": "^1.21.0",
+    "eslint": "^8.46.0",
+    "eslint-define-config": "^1.22.0",
     "prettier": "^3.0.0",
     "tsup": "^7.1.0",
     "tsx": "^3.12.7",
