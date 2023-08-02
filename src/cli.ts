@@ -2,7 +2,7 @@ import { readFile, unlink, writeFile } from 'node:fs/promises'
 import { loadConfig } from 'unconfig'
 import glob from 'fast-glob'
 import { toArray } from '@antfu/utils'
-import type { Config, Context } from './types'
+import { type Config, type Context } from './types'
 
 export async function runCli() {
   const config = await getConfig()

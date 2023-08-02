@@ -19,7 +19,10 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    "types": "./dist/index.d.ts",
+    "types": {
+      "require": "./dist/index.d.ts",
+      "import": "./dist/index.d.mts"
+    },
     "require": "./dist/index.js",
     "import": "./dist/index.mjs"
   },
@@ -31,9 +34,9 @@
   },
   "scripts": {
     "dev": "tsx src/run-cli.ts",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.json,.md",
+    "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
-    "build": "tsup && tsx scripts/postbuild.mts",
+    "build": "tsup",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
@@ -43,18 +46,18 @@
     "unconfig": "^0.3.10"
   },
   "devDependencies": {
-    "@sxzz/eslint-config-prettier": "^2.4.6",
-    "@sxzz/eslint-config-ts": "^2.4.6",
+    "@sxzz/eslint-config": "^3.3.2",
+    "@sxzz/prettier-config": "^1.0.4",
     "@types/node": "^20.4.5",
     "bumpp": "^9.1.1",
     "eslint": "^8.46.0",
-    "eslint-define-config": "^1.22.0",
     "prettier": "^3.0.0",
-    "tsup": "^7.1.0",
+    "tsup": "^7.2.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6"
   },
   "engines": {
     "node": ">=14.19.0"
-  }
+  },
+  "prettier": "@sxzz/prettier-config"
 }
