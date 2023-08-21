@@ -41,17 +41,17 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@antfu/utils": "^0.7.5",
+    "@antfu/utils": "^0.7.6",
     "fast-glob": "^3.3.1",
     "unconfig": "^0.3.10"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^3.4.0",
     "@sxzz/prettier-config": "^1.0.4",
-    "@types/node": "^20.5.0",
-    "bumpp": "^9.1.1",
+    "@types/node": "^20.5.1",
+    "bumpp": "^9.2.0",
     "eslint": "^8.47.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "tsup": "^7.2.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6"
