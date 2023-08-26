@@ -29,12 +29,12 @@ export async function run({
       cwd: path.dirname(source),
     })
 
-    for (const filepath of files) {
-      if (check) consola.info(`Checking ${filepath}`)
+    for (const filePath of files) {
+      if (check) consola.info(`Checking ${filePath}`)
 
-      const context: Context = { files, filepath }
+      const context: Context = { files, filePath }
 
-      const actual = await readFile(filepath, 'utf-8').catch(() => null)
+      const actual = await readFile(filePath, 'utf-8').catch(() => null)
       let expected: string | null | undefined
 
       if (item.type === 'text') {
@@ -51,19 +51,19 @@ export async function run({
 
       if (check) {
         if (expected === null) {
-          throw new TypeError(`File ${filepath} should be deleted but exists`)
+          throw new TypeError(`File ${filePath} should be deleted but exists`)
         } else {
           consola.fatal(
-            `File ${filepath} is not up to date, run with --write to update it.`
+            `File ${filePath} is not up to date, run with --write to update it.`
           )
           process.exit(1)
         }
       } else if (write) {
         if (expected === null) {
           // should be deleted
-          await unlink(filepath)
+          await unlink(filePath)
         } else if (expected !== undefined)
-          await writeFile(filepath, expected, 'utf-8')
+          await writeFile(filePath, expected, 'utf-8')
       }
     }
   }

@@ -1,7 +1,7 @@
 import { type Arrayable, type Awaitable } from '@antfu/utils'
 
 export interface Context {
-  filepath: string
+  filePath: string
   files: string[]
 }
 
