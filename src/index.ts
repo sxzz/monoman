@@ -8,6 +8,7 @@ import { type Config, type Context } from './types'
 
 export * from './types'
 export * from './cli'
+export * from './preset'
 
 export function defineConfig(config: Config): Config {
   return config
@@ -77,7 +78,7 @@ export async function getConfig() {
     defaults: [],
     sources: [
       {
-        files: 'monoman.config',
+        files: ['monoman.config', 'mono.config'],
         extensions: ['ts', 'mts', 'cts', 'js', 'mjs', 'cjs', 'json', ''],
       },
     ],
