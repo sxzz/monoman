@@ -56,7 +56,7 @@ export async function run({
           consola.fatal(
             `File ${filepath} is not up to date, run with --write to update it.`
           )
-          return
+          process.exit(1)
         }
       } else if (write) {
         if (expected === null) {
