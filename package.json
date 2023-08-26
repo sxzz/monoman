@@ -29,10 +29,11 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "tsx src/run-cli.ts",
+    "dev": "tsx src/dev.ts",
     "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "build": "tsup",
+    "watch": "tsup --watch",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },

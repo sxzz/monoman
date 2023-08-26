@@ -1,4 +1,5 @@
 import { readFile, unlink, writeFile } from 'node:fs/promises'
+import path from 'node:path'
 import { loadConfig } from 'unconfig'
 import { toArray } from '@antfu/utils'
 import consola from 'consola'
@@ -19,12 +20,13 @@ export async function run({
   check?: boolean
   write?: boolean
 }) {
-  const config = await getConfig()
+  const { config, source } = await getConfig()
 
   for (const item of Array.from(config)) {
     const files = await glob(item.include, {
       ignore: toArray(item.exclude),
       absolute: true,
+      cwd: path.dirname(source),
     })
 
     for (const filepath of files) {
@@ -37,14 +39,12 @@ export async function run({
 
       if (item.type === 'text') {
         if (item.contents) expected = await item.contents(actual, context)
-      } else if (item.type === 'json') {
-        // eslint-disable-next-line unicorn/no-lonely-if
-        if (item.contents)
-          expected = `${JSON.stringify(
-            await item.contents(actual ? JSON.parse(actual) : null, context),
-            null,
-            2
-          )}\n`
+      } else if (item.type === 'json' && item.contents) {
+        expected = `${JSON.stringify(
+          await item.contents(actual ? JSON.parse(actual) : null, context),
+          null,
+          2
+        )}\n`
       }
 
       if (expected === actual) continue
@@ -73,7 +73,7 @@ export async function run({
 }
 
 export async function getConfig() {
-  const { config } = await loadConfig<Config>({
+  const { config, sources } = await loadConfig<Config>({
     defaults: [],
     sources: [
       {
@@ -82,5 +82,8 @@ export async function getConfig() {
       },
     ],
   })
-  return Object.values(config)
+  return {
+    config: Object.values(config),
+    source: sources[0],
+  }
 }
