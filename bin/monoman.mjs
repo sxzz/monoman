@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-import '../dist/run-cli.js'
+import { runCli } from '../dist/index.mjs'
+runCli()

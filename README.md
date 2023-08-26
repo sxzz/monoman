@@ -2,6 +2,8 @@
 
 [![Unit Test](https://github.com/sxzz/monoman/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/monoman/actions/workflows/unit-test.yml)
 
+Manage monorepo common files.
+
 ## Install
 
 ```bash

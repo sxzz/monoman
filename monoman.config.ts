@@ -4,7 +4,7 @@ export default defineConfig([
   {
     include: 'package.json',
     type: 'json',
-    write(data: any) {
+    contents(data: any) {
       data.name = 'monoman'
       return data
     },
