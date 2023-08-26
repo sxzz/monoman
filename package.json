@@ -1,6 +1,6 @@
 {
   "name": "monoman",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "packageManager": "pnpm@8.6.12",
   "description": "Manage monorepo common files.",
   "license": "MIT",
