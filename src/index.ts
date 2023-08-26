@@ -6,6 +6,7 @@ import consola from 'consola'
 import glob from 'fast-glob'
 import { type Config, type Context } from './types'
 
+export * from './preset'
 export * from './types'
 export * from './cli'
 export * from './preset'
