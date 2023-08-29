@@ -1,20 +1,26 @@
-import { type Arrayable } from '@antfu/utils'
+import { type Arrayable, toArray } from '@antfu/utils'
 import { defineConfig } from '.'
 
 export function dedupeDeps({
   include = 'packages/*/package.json',
   exclude,
-  distinguishType = false,
+  ignores,
   types = ['dependencies', 'devDependencies'],
+  distinguishType = false,
   ignoreProtocols = ['file', 'link', 'workspace'],
 }: {
+  /** Include files */
   include?: Arrayable<string>
+  /** Exclude files */
   exclude?: Arrayable<string>
-  distinguishType?: boolean
+  /** Ignore deps */
+  ignores?: Arrayable<string>
   types?: string[]
+  distinguishType?: boolean
   ignoreProtocols?: string[]
 } = {}) {
   const globalDeps: Record<string, string> = Object.create(null)
+  const ignoresDeps = toArray(ignores)
   return defineConfig([
     {
       include,
@@ -26,6 +32,8 @@ export function dedupeDeps({
         for (const type of types) {
           const deps: Record<string, string> = data[type] || {}
           Object.entries(deps).forEach(([name, value]) => {
+            if (ignoresDeps.includes(name)) return
+
             let version: string, protocol: string | undefined
             if (value.includes(':')) {
               ;[protocol, version] = value.split(':', 2)
