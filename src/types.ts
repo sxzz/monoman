@@ -1,4 +1,4 @@
-import { type Arrayable, type Awaitable } from '@antfu/utils'
+import type { Arrayable, Awaitable } from '@antfu/utils'
 
 export interface Context {
   filePath: string

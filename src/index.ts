@@ -4,7 +4,7 @@ import { loadConfig } from 'unconfig'
 import { toArray } from '@antfu/utils'
 import consola from 'consola'
 import glob from 'fast-glob'
-import { type Config, type Context } from './types'
+import type { Config, Context } from './types'
 
 export * from './preset'
 export * from './types'
