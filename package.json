@@ -1,7 +1,7 @@
 {
   "name": "monoman",
   "version": "0.4.2",
-  "packageManager": "pnpm@8.10.4",
+  "packageManager": "pnpm@8.10.5",
   "description": "Manage monorepo common files.",
   "license": "MIT",
   "homepage": "https://github.com/sxzz/monoman#readme",
@@ -47,12 +47,12 @@
   "devDependencies": {
     "@sxzz/eslint-config": "^3.7.4",
     "@sxzz/prettier-config": "^2.0.0",
-    "@types/node": "^20.9.0",
+    "@types/node": "^20.9.2",
     "bumpp": "^9.2.0",
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "prettier": "^3.1.0",
     "tsup": "^7.2.0",
-    "tsx": "^4.1.1",
+    "tsx": "^4.1.4",
     "typescript": "^5.2.2"
   },
   "engines": {
