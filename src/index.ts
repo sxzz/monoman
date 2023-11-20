@@ -45,7 +45,7 @@ export async function run({
         expected = `${JSON.stringify(
           await item.contents(actual ? JSON.parse(actual) : null, context),
           null,
-          2
+          2,
         )}\n`
       }
 
@@ -56,7 +56,7 @@ export async function run({
           throw new TypeError(`File ${filePath} should be deleted but exists`)
         } else {
           consola.fatal(
-            `File ${filePath} is not up to date, run with --write to update it.`
+            `File ${filePath} is not up to date, run with --write to update it.`,
           )
           process.exit(1)
         }
