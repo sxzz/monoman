@@ -11,10 +11,10 @@ export type Config = ({
 } & (
   | {
       type: 'text'
-      contents?(text: string | null, context: Context): Awaitable<string>
+      contents?: (text: string | null, context: Context) => Awaitable<string>
     }
   | {
       type: 'json'
-      contents?(data: unknown | null, context: Context): Awaitable<unknown>
+      contents?: (data: any, context: Context) => Awaitable<unknown>
     }
 ))[]
