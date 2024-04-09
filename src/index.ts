@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { readFile, unlink, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { loadConfig } from 'unconfig'
