@@ -15,6 +15,6 @@ export type Config = ({
     }
   | {
       type: 'json'
-      contents?: (data: unknown | null, context: Context) => Awaitable<unknown>
+      contents?: (data: any, context: Context) => Awaitable<unknown>
     }
 ))[]

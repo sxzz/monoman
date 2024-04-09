@@ -26,7 +26,7 @@ export function dedupeDeps({
       include,
       exclude,
       type: 'json',
-      contents(data: Record<string, any>) {
+      contents(data: Record<string, any> | null) {
         if (!data) return
 
         for (const type of types) {
