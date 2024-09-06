@@ -1,5 +1,5 @@
+import { toArray, type Arrayable } from '@antfu/utils'
 import type { Config } from '../types'
-import type { Arrayable } from '@antfu/utils'
 import type { Lockfile } from '@pnpm/lockfile.types'
 
 export function noDuplicatedPnpmLockfile({
@@ -13,7 +13,7 @@ export function noDuplicatedPnpmLockfile({
   /** Exclude files */
   exclude?: Arrayable<string>
   /** Deps to check */
-  deps?: Arrayable<string>
+  deps?: Arrayable<string | RegExp> | ((id: string) => boolean)
   allowMajor?: boolean
 } = {}): Config {
   const depsVersion: Record<string, string> = Object.create(null)
@@ -46,7 +46,15 @@ export function noDuplicatedPnpmLockfile({
 
           const version = names.pop()!
           let name = names.join('@')
-          if (!deps.includes(name)) continue
+          if (typeof deps === 'function' && !deps(name)) {
+            continue
+          } else if (
+            !toArray(deps).some((dep) =>
+              dep instanceof RegExp ? dep.test(name) : dep === name,
+            )
+          ) {
+            continue
+          }
 
           const major = version.split('.')[0]
           if (allowMajor) {
