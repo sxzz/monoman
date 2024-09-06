@@ -15,6 +15,7 @@ export default defineConfig([
   },
   ...noDuplicatedDeps(),
   ...noDuplicatedPnpmLockfile({
-    deps: ['esbuild'],
+    deps: ['chalk'],
+    allowMajor: true,
   }),
 ])

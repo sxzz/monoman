@@ -6,6 +6,7 @@ export function noDuplicatedPnpmLockfile({
   include = 'pnpm-lock.yaml',
   exclude,
   deps = [],
+  allowMajor,
 }: {
   /** Include files */
   include?: Arrayable<string>
@@ -13,6 +14,7 @@ export function noDuplicatedPnpmLockfile({
   exclude?: Arrayable<string>
   /** Deps to check */
   deps?: Arrayable<string>
+  allowMajor?: boolean
 } = {}): Config {
   const depsVersion: Record<string, string> = Object.create(null)
   return [
@@ -41,9 +43,16 @@ export function noDuplicatedPnpmLockfile({
 
         for (const pkg of pkgs) {
           const names = pkg.split('@')
+
           const version = names.pop()!
-          const name = names.join('@')
+          let name = names.join('@')
           if (!deps.includes(name)) continue
+
+          const major = version.split('.')[0]
+          if (allowMajor) {
+            name += `@${major}`
+          }
+
           const existingVersion = depsVersion[name]
           if (existingVersion && existingVersion !== version) {
             throw new Error(
