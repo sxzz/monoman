@@ -1,4 +1,8 @@
-import { defineConfig } from './src/index'
+import {
+  defineConfig,
+  noDuplicatedDeps,
+  noDuplicatedPnpmLockfile,
+} from './src/index'
 
 export default defineConfig([
   {
@@ -9,4 +13,8 @@ export default defineConfig([
       return data
     },
   },
+  ...noDuplicatedDeps(),
+  ...noDuplicatedPnpmLockfile({
+    deps: ['esbuild'],
+  }),
 ])

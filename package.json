@@ -43,11 +43,14 @@
     "citty": "^0.1.6",
     "consola": "^3.2.3",
     "fast-glob": "^3.3.2",
+    "js-yaml": "^4.1.0",
     "unconfig": "^0.5.5"
   },
   "devDependencies": {
+    "@pnpm/lockfile.types": "^1.0.2",
     "@sxzz/eslint-config": "^4.1.4",
     "@sxzz/prettier-config": "^2.0.2",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.16.5",
     "bumpp": "^9.5.2",
     "eslint": "^9.9.1",

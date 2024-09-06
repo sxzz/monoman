@@ -1,0 +1,60 @@
+import type { Lockfile } from '@pnpm/lockfile.types'
+import type { Arrayable } from '@antfu/utils'
+import type { Config } from '../types'
+
+export function noDuplicatedPnpmLockfile({
+  include = 'pnpm-lock.yaml',
+  exclude,
+  deps = [],
+}: {
+  /** Include files */
+  include?: Arrayable<string>
+  /** Exclude files */
+  exclude?: Arrayable<string>
+  /** Deps to check */
+  deps?: Arrayable<string>
+} = {}): Config {
+  const depsVersion: Record<string, string> = Object.create(null)
+  return [
+    {
+      include,
+      exclude,
+      type: 'yaml',
+      dumpOptions: {
+        // @ts-ignore
+        blankLines: true,
+        lineWidth: -1, // This is setting line width to never wrap
+        noCompatMode: true,
+        noRefs: true,
+        sortKeys: false,
+      },
+      contents(data: Lockfile) {
+        const { lockfileVersion } = data
+        if (typeof lockfileVersion !== 'string' || lockfileVersion[0] !== '9') {
+          console.warn(
+            'Only support pnpm v9 lockfile, but got',
+            lockfileVersion,
+          )
+          return data
+        }
+        const pkgs = Object.keys(data.packages || {})
+
+        for (const pkg of pkgs) {
+          if (!deps.includes(pkg)) continue
+          const names = pkg.split('@')
+          const version = names.pop()!
+          const name = names.join('@')
+          const existingVersion = depsVersion[name]
+          if (existingVersion && existingVersion !== version) {
+            throw new Error(
+              `Duplicated package "${name}" found with different versions: ${existingVersion} and ${version}`,
+            )
+          }
+          depsVersion[name] = version
+        }
+
+        return data
+      },
+    },
+  ]
+}

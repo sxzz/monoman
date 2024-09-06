@@ -1,7 +1,7 @@
 import { type Arrayable, toArray } from '@antfu/utils'
-import { defineConfig } from '.'
+import type { Config } from '../types'
 
-export function dedupeDeps({
+export function noDuplicatedDeps({
   include = 'packages/*/package.json',
   exclude,
   ignores,
@@ -18,10 +18,10 @@ export function dedupeDeps({
   types?: string[]
   distinguishType?: boolean
   ignoreProtocols?: string[]
-} = {}) {
+} = {}): Config {
   const globalDeps: Record<string, string> = Object.create(null)
   const ignoresDeps = toArray(ignores)
-  return defineConfig([
+  return [
     {
       include,
       exclude,
@@ -52,5 +52,8 @@ export function dedupeDeps({
         return data
       },
     },
-  ])
+  ]
 }
+
+/** @deprecated use `noDuplicatedDeps` instead */
+export const dedupeDeps = noDuplicatedDeps

@@ -5,12 +5,12 @@ import { loadConfig } from 'unconfig'
 import { toArray } from '@antfu/utils'
 import consola from 'consola'
 import glob from 'fast-glob'
+import { dump, load } from 'js-yaml'
 import type { Config, Context } from './types'
 
-export * from './preset'
+export * from './presets'
 export * from './types'
 export * from './cli'
-export * from './preset'
 
 export function defineConfig(config: Config): Config {
   return config
@@ -47,6 +47,10 @@ export async function run({
           await item.contents(actual ? JSON.parse(actual) : null, context),
           null,
           2,
+        )}\n`
+      } else if (item.type === 'yaml' && item.contents) {
+        expected = `${dump(
+          await item.contents(actual ? load(actual) : null, context),
         )}\n`
       }
 

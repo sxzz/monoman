@@ -39,6 +39,15 @@ export default defineConfig([
       return `${text} hello monoman!`
     },
   },
+  {
+    include = 'pnpm-lock.yaml',
+    exclude: ['exclude/pnpm-lock.yaml'],
+    type: 'yaml',
+    contents(data: Record<string, string>) {
+      data.lockfileVersion = '9.0'
+      return data
+    },
+  },
 ])
 ```
 
@@ -46,12 +55,12 @@ See an [example](https://github.com/vue-macros/vue-macros/blob/main/monoman.conf
 
 ## Presets
 
-### `dedupeDeps`
+### `noDuplicatedDeps`
 
 Make all dependencies in all `package.json` unique.
 
 ```ts
-function dedupeDeps({
+function noDuplicatedDeps({
   include = 'packages/*/package.json',
   exclude,
   distinguishType = false,
@@ -63,6 +72,23 @@ function dedupeDeps({
   distinguishType?: boolean
   types?: string[]
   ignoreProtocols?: string[]
+} = {})
+```
+
+### `noDuplicatedPnpmLockfile
+
+```ts
+function noDuplicatedPnpmLockfile({
+  include = 'pnpm-lock.yaml',
+  exclude,
+  deps = [],
+}: {
+  /** Include files */
+  include?: Arrayable<string>
+  /** Exclude files */
+  exclude?: Arrayable<string>
+  /** Deps to check */
+  deps?: Arrayable<string>
 } = {})
 ```
 

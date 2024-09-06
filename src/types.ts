@@ -1,3 +1,4 @@
+import type { DumpOptions } from 'js-yaml'
 import type { Arrayable, Awaitable } from '@antfu/utils'
 
 export interface Context {
@@ -16,5 +17,10 @@ export type Config = ({
   | {
       type: 'json'
       contents?: (data: any, context: Context) => Awaitable<unknown>
+    }
+  | {
+      type: 'yaml'
+      contents?: (data: any, context: Context) => Awaitable<unknown>
+      dumpOptions?: DumpOptions
     }
 ))[]
