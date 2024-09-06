@@ -1,16 +1,19 @@
 import process from 'node:process'
 import { readFile, unlink, writeFile } from 'node:fs/promises'
 import path from 'node:path'
+import { createRequire } from 'node:module'
 import { loadConfig } from 'unconfig'
 import { toArray } from '@antfu/utils'
 import consola from 'consola'
 import glob from 'fast-glob'
-import { dump, load } from 'js-yaml'
 import type { Config, Context } from './types'
 
 export * from './presets'
 export * from './types'
 export * from './cli'
+
+const require = createRequire(import.meta.url)
+const yaml = require('js-yaml')
 
 export function defineConfig(config: Config): Config {
   return config
@@ -49,9 +52,10 @@ export async function run({
           2,
         )}\n`
       } else if (item.type === 'yaml' && item.contents) {
-        expected = `${dump(
-          await item.contents(actual ? load(actual) : null, context),
-        )}\n`
+        expected = yaml.dump(
+          await item.contents(actual ? yaml.load(actual) : null, context),
+          item.dumpOptions,
+        )
       }
 
       if (expected === actual) continue

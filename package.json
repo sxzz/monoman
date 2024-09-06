@@ -43,7 +43,7 @@
     "citty": "^0.1.6",
     "consola": "^3.2.3",
     "fast-glob": "^3.3.2",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
     "unconfig": "^0.5.5"
   },
   "devDependencies": {
