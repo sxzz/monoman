@@ -1,4 +1,4 @@
-import { type Arrayable, toArray } from '@antfu/utils'
+import { toArray, type Arrayable } from '@antfu/utils'
 import type { Config } from '../types'
 
 export function noDuplicatedDeps({

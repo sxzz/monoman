@@ -1,6 +1,6 @@
-import type { Lockfile } from '@pnpm/lockfile.types'
-import type { Arrayable } from '@antfu/utils'
 import type { Config } from '../types'
+import type { Arrayable } from '@antfu/utils'
+import type { Lockfile } from '@pnpm/lockfile.types'
 
 export function noDuplicatedPnpmLockfile({
   include = 'pnpm-lock.yaml',

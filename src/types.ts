@@ -1,5 +1,5 @@
-import type { DumpOptions } from 'js-yaml'
 import type { Arrayable, Awaitable } from '@antfu/utils'
+import type { DumpOptions } from 'js-yaml'
 
 export interface Context {
   filePath: string
