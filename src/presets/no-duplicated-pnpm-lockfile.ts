@@ -40,10 +40,10 @@ export function noDuplicatedPnpmLockfile({
         const pkgs = Object.keys(data.packages || {})
 
         for (const pkg of pkgs) {
-          if (!deps.includes(pkg)) continue
           const names = pkg.split('@')
           const version = names.pop()!
           const name = names.join('@')
+          if (!deps.includes(name)) continue
           const existingVersion = depsVersion[name]
           if (existingVersion && existingVersion !== version) {
             throw new Error(
