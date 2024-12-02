@@ -47,7 +47,7 @@
     "unconfig": "^0.5.5"
   },
   "devDependencies": {
-    "@pnpm/lockfile.types": "^1.0.2",
+    "@pnpm/lockfile.types": "^1000.0.0",
     "@sxzz/eslint-config": "^4.1.4",
     "@sxzz/prettier-config": "^2.0.2",
     "@types/js-yaml": "^4.0.9",

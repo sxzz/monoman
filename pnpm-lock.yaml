@@ -28,8 +28,8 @@ importers:
         version: 0.5.5
     devDependencies:
       '@pnpm/lockfile.types':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1000.0.0
+        version: 1000.0.0
       '@sxzz/eslint-config':
         specifier: ^4.1.4
         version: 4.1.5(@typescript-eslint/eslint-plugin@8.4.0(@typescript-eslint/parser@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
@@ -320,16 +320,16 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@pnpm/lockfile.types@1.0.2':
-    resolution: {integrity: sha512-vtSYeL28wtX/IalSg1ehxFRz4wJ07gqdndHnQtjbRn6n0RyBotPwR5rwotqA9AtMLjAE5b8WGj+TlNdPREXHYg==}
+  '@pnpm/lockfile.types@1000.0.0':
+    resolution: {integrity: sha512-VZ1pH+vV7ukbAwDU98iF7LTzV3WearMdiRxKKkG12zLuJCjrFm2s2iZ9WHvo/5/xv1Z0CAZbZO96TV2+s55dww==}
     engines: {node: '>=18.12'}
 
-  '@pnpm/patching.types@1.0.0':
-    resolution: {integrity: sha512-juCdQCC1USqLcOhVPl1tYReoTO9YH4fTullMnFXXcmpsDM7Dkn3tzuOQKC3oPoJ2ozv+0EeWWMtMGqn2+IM3pQ==}
+  '@pnpm/patching.types@1000.0.0':
+    resolution: {integrity: sha512-IzNrirYIcquD0tRGKkzj8q5eKh0zOVDL6rOu/sQSrlF6qWTu8YaWCI5LQoZPa1B5IGQTCJwhcoZlnGBHZyEXAg==}
     engines: {node: '>=18.12'}
 
-  '@pnpm/types@12.1.0':
-    resolution: {integrity: sha512-bbu+UmaZ8fG72K/FMqKPlXLZ955VcmU6P2ODzAtKbOTtrEbpNyBfTeki9u6IZex6RF66s8SDpAHhmRV0qWkDwA==}
+  '@pnpm/types@1000.0.0':
+    resolution: {integrity: sha512-txl+XYCa0tuZ+J55hp3M3g8PGmKbf371GDDWlKjDBEXmVRn484LBLx10lPfQAK8/BsMjr42CfpJpfaJrUipQVg==}
     engines: {node: '>=18.12'}
 
   '@rollup/rollup-android-arm-eabi@4.21.2':
@@ -2240,14 +2240,14 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@pnpm/lockfile.types@1.0.2':
+  '@pnpm/lockfile.types@1000.0.0':
     dependencies:
-      '@pnpm/patching.types': 1.0.0
-      '@pnpm/types': 12.1.0
+      '@pnpm/patching.types': 1000.0.0
+      '@pnpm/types': 1000.0.0
 
-  '@pnpm/patching.types@1.0.0': {}
+  '@pnpm/patching.types@1000.0.0': {}
 
-  '@pnpm/types@12.1.0': {}
+  '@pnpm/types@1000.0.0': {}
 
   '@rollup/rollup-android-arm-eabi@4.21.2':
     optional: true
