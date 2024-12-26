@@ -56,4 +56,4 @@ export function noDuplicatedDeps({
 }
 
 /** @deprecated use `noDuplicatedDeps` instead */
-export const dedupeDeps = noDuplicatedDeps
+export const dedupeDeps: typeof noDuplicatedDeps = noDuplicatedDeps

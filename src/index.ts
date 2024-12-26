@@ -25,7 +25,7 @@ export async function run({
 }: {
   check?: boolean
   write?: boolean
-}) {
+}): Promise<void> {
   const { config, source } = await getConfig()
 
   for (const item of Array.from(config)) {
@@ -83,7 +83,10 @@ export async function run({
   else if (write) consola.success('Files are up to date!')
 }
 
-export async function getConfig() {
+export async function getConfig(): Promise<{
+  config: Config
+  source: string
+}> {
   const { config, sources } = await loadConfig<Config>({
     defaults: [],
     sources: [

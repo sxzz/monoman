@@ -30,4 +30,4 @@ const main = defineCommand({
   },
 })
 
-export const runCli = () => runMain(main)
+export const runCli = (): Promise<void> => runMain(main)
