@@ -28,8 +28,8 @@ importers:
         version: 0.6.0
     devDependencies:
       '@pnpm/lockfile.types':
-        specifier: ^1000.0.0
-        version: 1000.0.0
+        specifier: ^1001.0.0
+        version: 1001.0.0
       '@sxzz/eslint-config':
         specifier: ^4.5.1
         version: 4.5.1(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.18.2(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
@@ -486,8 +486,8 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@pnpm/lockfile.types@1000.0.0':
-    resolution: {integrity: sha512-VZ1pH+vV7ukbAwDU98iF7LTzV3WearMdiRxKKkG12zLuJCjrFm2s2iZ9WHvo/5/xv1Z0CAZbZO96TV2+s55dww==}
+  '@pnpm/lockfile.types@1001.0.0':
+    resolution: {integrity: sha512-ii+/83ijgVZqu7U+916Y0cz6ACQNYIfVlhT3xTGmpALDZowR0kJIfXHCZOTGbzCXDeBY7h9524LGLdylQce1EA==}
     engines: {node: '>=18.12'}
 
   '@pnpm/patching.types@1000.0.0':
@@ -2419,7 +2419,7 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@pnpm/lockfile.types@1000.0.0':
+  '@pnpm/lockfile.types@1001.0.0':
     dependencies:
       '@pnpm/patching.types': 1000.0.0
       '@pnpm/types': 1000.0.0
