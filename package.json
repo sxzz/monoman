@@ -35,6 +35,7 @@
     "lint:fix": "pnpm run lint --fix",
     "build": "tsup",
     "watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
@@ -47,7 +48,7 @@
     "unconfig": "^0.6.0"
   },
   "devDependencies": {
-    "@pnpm/lockfile.types": "^1000.0.0",
+    "@pnpm/lockfile.types": "^1001.0.0",
     "@sxzz/eslint-config": "^4.5.1",
     "@sxzz/prettier-config": "^2.0.2",
     "@types/js-yaml": "^4.0.9",

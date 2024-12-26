@@ -1,6 +1,6 @@
 import { toArray, type Arrayable } from '@antfu/utils'
 import type { Config } from '../types'
-import type { Lockfile } from '@pnpm/lockfile.types'
+import type { LockfileObject } from '@pnpm/lockfile.types'
 
 export function noDuplicatedPnpmLockfile({
   include = 'pnpm-lock.yaml',
@@ -30,7 +30,7 @@ export function noDuplicatedPnpmLockfile({
         noRefs: true,
         sortKeys: false,
       },
-      contents(data: Lockfile) {
+      contents(data: LockfileObject) {
         const { lockfileVersion } = data
         if (typeof lockfileVersion !== 'string' || lockfileVersion[0] !== '9') {
           console.warn(
