@@ -1,6 +1,6 @@
 {
   "name": "monoman",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "packageManager": "pnpm@9.15.3",
   "description": "Manage monorepo common files.",
   "type": "module",
