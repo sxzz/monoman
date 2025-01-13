@@ -2,7 +2,7 @@ import { toArray, type Arrayable } from '@antfu/utils'
 import type { Config } from '../types'
 
 export function noDuplicatedDeps({
-  include = 'packages/*/package.json',
+  include = ['package.json', 'packages/*/package.json'],
   exclude,
   ignores,
   types = ['dependencies', 'devDependencies'],
@@ -34,20 +34,17 @@ export function noDuplicatedDeps({
           Object.entries(deps).forEach(([name, value]) => {
             if (ignoresDeps.includes(name)) return
 
-            let version: string, protocol: string | undefined
-            if (value.includes(':')) {
-              const [_protocol, ...versions] = value.split(':')
-              protocol = _protocol
-              version = versions.join(':')
-            } else {
-              version = value
-            }
+            const protocol: string | undefined = value.includes(':')
+              ? value.split(':')[0]
+              : undefined
             if (protocol && ignoreProtocols.includes(protocol)) return
 
             const key = distinguishType ? `${type}:${name}` : name
-            if (key in globalDeps && globalDeps[key] !== version) {
+            if (key in globalDeps && globalDeps[key] !== value) {
               deps[name] = globalDeps[key]
-            } else globalDeps[key] = version
+            } else {
+              globalDeps[key] = value
+            }
           })
         }
 
