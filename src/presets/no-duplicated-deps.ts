@@ -36,14 +36,16 @@ export function noDuplicatedDeps({
 
             let version: string, protocol: string | undefined
             if (value.includes(':')) {
-              ;[protocol, version] = value.split(':', 2)
+              const [_protocol, ...versions] = value.split(':')
+              protocol = _protocol
+              version = versions.join(':')
             } else {
               version = value
             }
             if (protocol && ignoreProtocols.includes(protocol)) return
 
             const key = distinguishType ? `${type}:${name}` : name
-            if (globalDeps[key] && globalDeps[key] !== version) {
+            if (key in globalDeps && globalDeps[key] !== version) {
               deps[name] = globalDeps[key]
             } else globalDeps[key] = version
           })
