@@ -42,7 +42,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@antfu/utils": "^0.7.10",
+    "@antfu/utils": "^8.0.0",
     "citty": "^0.1.6",
     "consola": "^3.3.2",
     "fast-glob": "^3.3.2",
