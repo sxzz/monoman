@@ -4,7 +4,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { toArray } from '@antfu/utils'
 import consola from 'consola'
-import glob from 'fast-glob'
+import { glob } from 'tinyglobby'
 import { loadConfig } from 'unconfig'
 import type { Config, Context } from './types'
 
