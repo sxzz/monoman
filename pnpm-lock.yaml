@@ -17,12 +17,12 @@ importers:
       consola:
         specifier: ^3.3.3
         version: 3.3.3
+      fast-glob:
+        specifier: ^3.3.2
+        version: 3.3.3
       js-yaml:
         specifier: npm:@zkochan/js-yaml@0.0.7
         version: '@zkochan/js-yaml@0.0.7'
-      tinyglobby:
-        specifier: ^0.2.10
-        version: 0.2.10
       unconfig:
         specifier: ^0.6.0
         version: 0.6.0
