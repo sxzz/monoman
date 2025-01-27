@@ -55,7 +55,7 @@
     "@sxzz/prettier-config": "^2.0.2",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.10.5",
-    "bumpp": "^9.10.0",
+    "bumpp": "^10.0.1",
     "eslint": "^9.18.0",
     "prettier": "^3.4.2",
     "tsdown": "^0.5.3",
