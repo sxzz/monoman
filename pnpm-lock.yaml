@@ -23,6 +23,9 @@ importers:
       js-yaml:
         specifier: npm:@zkochan/js-yaml@0.0.7
         version: '@zkochan/js-yaml@0.0.7'
+      pnpm-multi-versions:
+        specifier: ^0.3.1
+        version: 0.3.1
       unconfig:
         specifier: ^0.6.0
         version: 0.6.0
@@ -530,12 +533,20 @@ packages:
     resolution: {integrity: sha512-S2JSDaxN7NM+GEkuC3/5czI8JvuAZgIz4voWZxVXcCubYwRusbpaaGkuQw2dCMFaI9P9vGLPTk1QXTj7vR3POg==}
     engines: {node: '>=18.12'}
 
+  '@pnpm/lockfile.types@1001.0.2':
+    resolution: {integrity: sha512-drx2TRYPWriUQDvFHygJ/MuacQ7BRvGvptENNX2QXAsnHx8G5ZYnF21XDc6fCkPG6f83Rw1PcHOaUHObLZbEeA==}
+    engines: {node: '>=18.12'}
+
   '@pnpm/patching.types@1000.0.0':
     resolution: {integrity: sha512-IzNrirYIcquD0tRGKkzj8q5eKh0zOVDL6rOu/sQSrlF6qWTu8YaWCI5LQoZPa1B5IGQTCJwhcoZlnGBHZyEXAg==}
     engines: {node: '>=18.12'}
 
   '@pnpm/types@1000.1.0':
     resolution: {integrity: sha512-+F58+ZHk9vJS4NKeVIzvPGCdU9tiPs7p1egqZRBiMN6Sc55LdDUEd/ArvyuooesY1hqmapUcDsgpU2krmNFMRQ==}
+    engines: {node: '>=18.12'}
+
+  '@pnpm/types@1000.1.1':
+    resolution: {integrity: sha512-5zrv7B+4mW/6iiYS/BrFZWbMqLHjKmaBrMcw+F8LcuMQ7p4SQX4ANoycpr1VIQpn4+xQ0ckyuadfxBttpzicbg==}
     engines: {node: '>=18.12'}
 
   '@rolldown/binding-darwin-arm64@1.0.0-beta.1':
@@ -1769,6 +1780,11 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
 
+  pnpm-multi-versions@0.3.1:
+    resolution: {integrity: sha512-oOLQ5wyMoMRVkA8+1BJnpU+Ssj81Ng9zMuT+FQmWC5AaPcCTWwclkNCAkpcs7/WW0MTL1HUBVUFMP7IQURDmFA==}
+    engines: {node: '>=18.12.0'}
+    hasBin: true
+
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
@@ -2434,9 +2450,16 @@ snapshots:
       '@pnpm/patching.types': 1000.0.0
       '@pnpm/types': 1000.1.0
 
+  '@pnpm/lockfile.types@1001.0.2':
+    dependencies:
+      '@pnpm/patching.types': 1000.0.0
+      '@pnpm/types': 1000.1.1
+
   '@pnpm/patching.types@1000.0.0': {}
 
   '@pnpm/types@1000.1.0': {}
+
+  '@pnpm/types@1000.1.1': {}
 
   '@rolldown/binding-darwin-arm64@1.0.0-beta.1':
     optional: true
@@ -3939,6 +3962,13 @@ snapshots:
       pathe: 1.1.2
 
   pluralize@8.0.0: {}
+
+  pnpm-multi-versions@0.3.1:
+    dependencies:
+      '@pnpm/lockfile.types': 1001.0.2
+      find-up-simple: 1.0.0
+      picocolors: 1.1.1
+      yaml: 2.7.0
 
   postcss-selector-parser@6.1.2:
     dependencies:

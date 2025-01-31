@@ -1,4 +1,5 @@
 import { toArray, type Arrayable } from '@antfu/utils'
+import { pnpmMultiVersions } from 'pnpm-multi-versions'
 import type { Config } from '../types'
 import type { LockfileObject } from '@pnpm/lockfile.types'
 
@@ -16,7 +17,6 @@ export function noDuplicatedPnpmLockfile({
   deps?: Arrayable<string | RegExp> | ((id: string) => boolean)
   allowMajor?: boolean
 } = {}): Config {
-  const depsVersion: Record<string, string> = Object.create(null)
   return [
     {
       include,
@@ -31,23 +31,14 @@ export function noDuplicatedPnpmLockfile({
         sortKeys: false,
       },
       contents(data: LockfileObject) {
-        const { lockfileVersion } = data
-        if (typeof lockfileVersion !== 'string' || lockfileVersion[0] !== '9') {
-          console.warn(
-            'Only support pnpm v9 lockfile, but got',
-            lockfileVersion,
-          )
-          return data
-        }
-        const pkgs = Object.keys(data.packages || {})
+        const { versionsMap, multipleVersions } = pnpmMultiVersions(data, {
+          ignoreMajor: allowMajor,
+        })
 
-        for (const pkg of pkgs) {
-          const names = pkg.split('@')
-
-          const version = names.pop()!
-          let name = names.join('@')
-          if (typeof deps === 'function' && !deps(name)) {
-            continue
+        let hasError = false
+        for (const name of multipleVersions) {
+          if (typeof deps === 'function') {
+            if (!deps(name)) continue
           } else if (
             !toArray(deps).some((dep) =>
               dep instanceof RegExp ? dep.test(name) : dep === name,
@@ -56,18 +47,15 @@ export function noDuplicatedPnpmLockfile({
             continue
           }
 
-          const major = version.split('.')[0]
-          if (allowMajor) {
-            name += `@${major}`
-          }
+          const versions = [...versionsMap.get(name)!]
+          console.error(
+            `Duplicated package "${name}" found with different versions: ${versions.join(', ')}`,
+          )
+          hasError = true
+        }
 
-          const existingVersion = depsVersion[name]
-          if (existingVersion && existingVersion !== version) {
-            throw new Error(
-              `Duplicated package "${name}" found with different versions: ${existingVersion} and ${version}`,
-            )
-          }
-          depsVersion[name] = version
+        if (hasError) {
+          throw new Error('Duplicated packages found in pnpm-lock.yaml')
         }
 
         return data

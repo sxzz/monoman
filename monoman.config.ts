@@ -16,6 +16,5 @@ export default defineConfig([
   ...noDuplicatedDeps(),
   ...noDuplicatedPnpmLockfile({
     deps: ['chalk'],
-    allowMajor: true,
   }),
 ])
