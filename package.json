@@ -43,10 +43,10 @@
   },
   "dependencies": {
     "@antfu/utils": "^8.1.0",
-    "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
     "citty": "^0.1.6",
     "consola": "^3.4.0",
     "fast-glob": "^3.3.3",
+    "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
     "pnpm-multi-versions": "^0.4.0",
     "unconfig": "^0.6.1"
   },
