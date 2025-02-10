@@ -49,7 +49,7 @@
     "fast-glob": "^3.3.3",
     "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
     "pnpm-multi-versions": "^0.4.0",
-    "unconfig": "^0.6.1"
+    "unconfig": "^7.0.0"
   },
   "devDependencies": {
     "@pnpm/lockfile.types": "^1001.0.2",
