@@ -75,7 +75,7 @@ function noDuplicatedDeps({
 } = {})
 ```
 
-### `noDuplicatedPnpmLockfile
+### `noDuplicatedPnpmLockfile`
 
 ```ts
 function noDuplicatedPnpmLockfile({
