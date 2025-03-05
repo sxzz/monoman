@@ -50,18 +50,18 @@
     "fast-glob": "^3.3.3",
     "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
     "pnpm-multi-versions": "^0.4.1",
-    "unconfig": "^7.2.0"
+    "unconfig": "^7.3.0"
   },
   "devDependencies": {
     "@pnpm/lockfile.types": "^1001.0.3",
     "@sxzz/eslint-config": "^5.2.0",
     "@sxzz/prettier-config": "^2.2.0",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.13.8",
+    "@types/node": "^22.13.9",
     "bumpp": "^10.0.3",
     "eslint": "^9.21.0",
     "prettier": "^3.5.3",
-    "tsdown": "^0.6.0",
+    "tsdown": "^0.6.3",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
