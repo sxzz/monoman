@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@pnpm/lockfile.types": "^1001.0.3",
-    "@sxzz/eslint-config": "^5.2.0",
+    "@sxzz/eslint-config": "^6.0.2",
     "@sxzz/prettier-config": "^2.2.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.13.9",
