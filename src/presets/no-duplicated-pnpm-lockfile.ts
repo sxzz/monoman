@@ -1,7 +1,6 @@
 import { toArray, type Arrayable } from '@antfu/utils'
-import { pnpmMultiVersions } from 'pnpm-multi-versions'
+import { pnpmMultiVersions, type LockfileObject } from 'pnpm-multi-versions'
 import type { Config } from '../types'
-import type { LockfileObject } from '@pnpm/lockfile.types'
 
 export function noDuplicatedPnpmLockfile({
   include = 'pnpm-lock.yaml',
