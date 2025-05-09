@@ -48,7 +48,7 @@
     "consola": "^3.4.2",
     "fast-glob": "^3.3.3",
     "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
-    "pnpm-multi-versions": "^0.4.2",
+    "pnpm-multi-versions": "^0.5.0",
     "unconfig": "^7.3.2"
   },
   "devDependencies": {
