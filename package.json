@@ -1,7 +1,7 @@
 {
   "name": "monoman",
   "version": "0.7.1",
-  "packageManager": "pnpm@10.10.0",
+  "packageManager": "pnpm@10.14.0",
   "description": "Manage monorepo common files.",
   "type": "module",
   "license": "MIT",
@@ -47,22 +47,22 @@
     "citty": "^0.1.6",
     "consola": "^3.4.2",
     "fast-glob": "^3.3.3",
-    "js-yaml": "npm:@zkochan/js-yaml@0.0.7",
-    "pnpm-multi-versions": "^0.5.0",
+    "js-yaml": "npm:@zkochan/js-yaml@0.0.9",
+    "pnpm-multi-versions": "^0.5.1",
     "unconfig": "^7.3.2"
   },
   "devDependencies": {
     "@antfu/utils": "^9.2.0",
-    "@sxzz/eslint-config": "^7.0.0",
-    "@sxzz/prettier-config": "^2.2.1",
+    "@sxzz/eslint-config": "^7.1.2",
+    "@sxzz/prettier-config": "^2.2.3",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^22.15.17",
-    "bumpp": "^10.1.0",
-    "eslint": "^9.26.0",
-    "prettier": "^3.5.3",
-    "tsdown": "^0.11.1",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "@types/node": "^24.3.0",
+    "bumpp": "^10.2.3",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
+    "tsdown": "^0.14.1",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=20.18.0"
