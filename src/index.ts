@@ -40,7 +40,7 @@ export async function run({
 
       const context: Context = { files, filePath }
 
-      const actual = await readFile(filePath, 'utf-8').catch(() => null)
+      const actual = await readFile(filePath, 'utf8').catch(() => null)
       let expected: string | null | undefined
 
       if (item.type === 'text') {
@@ -74,7 +74,7 @@ export async function run({
           // should be deleted
           await unlink(filePath)
         } else if (expected !== undefined)
-          await writeFile(filePath, expected, 'utf-8')
+          await writeFile(filePath, expected, 'utf8')
       }
     }
   }
