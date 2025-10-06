@@ -1,7 +1,7 @@
 {
   "name": "monoman",
   "version": "0.7.2",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.18.1",
   "description": "Manage monorepo common files.",
   "type": "module",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/sxzz/monoman.git"
   },
-  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
+  "author": "Kevin Deng <sxzz@sxzz.moe>",
   "funding": "https://github.com/sponsors/sxzz",
   "files": [
     "dist"
@@ -22,9 +22,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    },
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
   "bin": {
@@ -48,24 +46,24 @@
     "consola": "^3.4.2",
     "fast-glob": "^3.3.3",
     "js-yaml": "npm:@zkochan/js-yaml@0.0.9",
-    "pnpm-multi-versions": "^0.5.1",
-    "unconfig": "^7.3.2"
+    "pnpm-multi-versions": "^0.5.3",
+    "unconfig": "^7.3.3"
   },
   "devDependencies": {
-    "@antfu/utils": "^9.2.0",
-    "@sxzz/eslint-config": "^7.1.2",
-    "@sxzz/prettier-config": "^2.2.3",
+    "@antfu/utils": "^9.3.0",
+    "@sxzz/eslint-config": "^7.2.7",
+    "@sxzz/prettier-config": "^2.2.4",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^24.3.0",
-    "bumpp": "^10.2.3",
-    "eslint": "^9.33.0",
+    "@types/node": "^24.7.0",
+    "bumpp": "^10.3.1",
+    "eslint": "^9.37.0",
     "prettier": "^3.6.2",
-    "tsdown": "^0.14.1",
-    "tsx": "^4.20.4",
-    "typescript": "^5.9.2"
+    "tsdown": "^0.15.6",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=20.18.0"
+    "node": ">=20.19.0"
   },
   "prettier": "@sxzz/prettier-config"
 }

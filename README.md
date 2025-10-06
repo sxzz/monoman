@@ -1,6 +1,8 @@
-# monoman [![npm](https://img.shields.io/npm/v/monoman.svg)](https://npmjs.com/package/monoman)
+# monoman
 
-[![Unit Test](https://github.com/sxzz/monoman/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/monoman/actions/workflows/unit-test.yml)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Unit Test][unit-test-src]][unit-test-href]
 
 Manage monorepo common files.
 
@@ -102,4 +104,13 @@ function noDuplicatedPnpmLockfile({
 
 ## License
 
-[MIT](./LICENSE) License © 2023-PRESENT [三咲智子](https://github.com/sxzz)
+[MIT](./LICENSE) License © 2023-PRESENT [Kevin Deng](https://github.com/sxzz)
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/monoman.svg
+[npm-version-href]: https://npmjs.com/package/monoman
+[npm-downloads-src]: https://img.shields.io/npm/dm/monoman
+[npm-downloads-href]: https://www.npmcharts.com/compare/monoman?interval=30
+[unit-test-src]: https://github.com/sxzz/monoman/actions/workflows/unit-test.yml/badge.svg
+[unit-test-href]: https://github.com/sxzz/monoman/actions/workflows/unit-test.yml
