@@ -1,7 +1,7 @@
 {
   "name": "monoman",
   "version": "0.7.3",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.18.2",
   "description": "Manage monorepo common files.",
   "type": "module",
   "license": "MIT",
@@ -45,7 +45,7 @@
     "citty": "^0.1.6",
     "consola": "^3.4.2",
     "fast-glob": "^3.3.3",
-    "js-yaml": "npm:@zkochan/js-yaml@0.0.9",
+    "js-yaml": "npm:@zkochan/js-yaml@0.0.10",
     "pnpm-multi-versions": "^0.5.3",
     "unconfig": "^7.3.3"
   },
@@ -54,7 +54,7 @@
     "@sxzz/eslint-config": "^7.2.7",
     "@sxzz/prettier-config": "^2.2.4",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.7.2",
     "bumpp": "^10.3.1",
     "eslint": "^9.37.0",
     "prettier": "^3.6.2",
