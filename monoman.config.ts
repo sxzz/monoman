@@ -1,8 +1,5 @@
-import {
-  defineConfig,
-  noDuplicatedDeps,
-  noDuplicatedPnpmLockfile,
-} from './src/index'
+import { defineConfig } from './src/index'
+import { noDuplicatedDeps, noDuplicatedPnpmLockfile } from './src/presets'
 
 export default defineConfig([
   {

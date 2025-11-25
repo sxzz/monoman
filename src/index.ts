@@ -7,9 +7,7 @@ import consola from 'consola'
 import { loadConfig } from 'unconfig'
 import type { Config, Context } from './types'
 
-export * from './presets'
 export * from './types'
-export * from './cli'
 
 const require = createRequire(import.meta.url)
 const yaml = require('js-yaml')

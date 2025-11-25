@@ -24,6 +24,7 @@
   "exports": {
     ".": "./dist/index.mjs",
     "./cli": "./dist/cli.mjs",
+    "./presets": "./dist/presets.mjs",
     "./run": "./dist/run.mjs",
     "./package.json": "./package.json"
   },

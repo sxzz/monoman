@@ -57,6 +57,14 @@ See an [example](https://github.com/vue-macros/vue-macros/blob/main/monoman.conf
 
 ## Presets
 
+```ts
+import {
+  noDuplicatedDeps,
+  noDuplicatedPnpmLockfile,
+  // ...
+} from 'monoman/presets'
+```
+
 ### `noDuplicatedDeps`
 
 Make all dependencies in all `package.json` unique.

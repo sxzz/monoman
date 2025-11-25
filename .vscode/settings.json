@@ -1,3 +1,5 @@
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "exportall.config.folderListener": ["/src/presets"],
+  "exportall.config.semis": false
 }
