@@ -44,7 +44,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "citty": "^0.1.6",
+    "cac": "^6.7.14",
     "consola": "^3.4.2",
     "fast-glob": "^3.3.3",
     "js-yaml": "npm:@zkochan/js-yaml@0.0.10",

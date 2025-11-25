@@ -1,33 +1,19 @@
-import { defineCommand, runMain } from 'citty'
+import { cac, type CAC } from 'cac'
 import { description, name, version } from '../package.json'
 import { run } from '.'
 
-const main = defineCommand({
-  meta: {
-    name,
-    version,
-    description,
-  },
-  args: {
-    write: {
-      alias: 'w',
-      type: 'boolean',
-      default: true,
-      description: 'Write the files if they are not up to date',
-    },
-    check: {
-      alias: 'c',
-      type: 'boolean',
-      default: false,
-      description: 'Check if the files are up to date',
-    },
-  },
-  run: (ctx) => {
-    return run({
-      write: ctx.args.write,
-      check: ctx.args.check,
-    })
-  },
-})
+export const cli: CAC = cac(name).version(version).help()
 
-export const runCli = (): Promise<void> => runMain(main)
+cli
+  .command('', description)
+  .option('-w, --write', 'Write the files if they are not up to date', {
+    default: true,
+  })
+  .option('-c, --check', 'Check if the files are up to date', {
+    default: false,
+  })
+  .action((options) => run(options))
+
+export function runCLI(): void {
+  cli.parse()
+}
