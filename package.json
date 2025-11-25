@@ -23,10 +23,12 @@
   "types": "./dist/index.d.mts",
   "exports": {
     ".": "./dist/index.mjs",
+    "./cli": "./dist/cli.mjs",
+    "./run": "./dist/run.mjs",
     "./package.json": "./package.json"
   },
   "bin": {
-    "monoman": "./bin/monoman.js"
+    "monoman": "./dist/run.mjs"
   },
   "publishConfig": {
     "access": "public"
