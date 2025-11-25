@@ -1,7 +1,7 @@
 {
   "name": "monoman",
   "version": "0.7.3",
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "pnpm@10.23.0",
   "description": "Manage monorepo common files.",
   "type": "module",
   "license": "MIT",
@@ -18,11 +18,11 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
   "bin": {
@@ -45,20 +45,20 @@
     "citty": "^0.1.6",
     "consola": "^3.4.2",
     "fast-glob": "^3.3.3",
-    "js-yaml": "npm:@zkochan/js-yaml@0.0.9",
-    "pnpm-multi-versions": "^0.5.3",
-    "unconfig": "^7.3.3"
+    "js-yaml": "npm:@zkochan/js-yaml@0.0.10",
+    "pnpm-multi-versions": "^0.5.4",
+    "unconfig": "^7.4.1"
   },
   "devDependencies": {
     "@antfu/utils": "^9.3.0",
-    "@sxzz/eslint-config": "^7.2.7",
-    "@sxzz/prettier-config": "^2.2.4",
+    "@sxzz/eslint-config": "^7.3.2",
+    "@sxzz/prettier-config": "^2.2.5",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.10.1",
     "bumpp": "^10.3.1",
-    "eslint": "^9.37.0",
+    "eslint": "^9.39.1",
     "prettier": "^3.6.2",
-    "tsdown": "^0.15.6",
+    "tsdown": "^0.16.6",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
