@@ -27,6 +27,14 @@
     "./run": "./dist/run.mjs",
     "./package.json": "./package.json"
   },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*.d.mts",
+        "./*"
+      ]
+    }
+  },
   "bin": {
     "monoman": "./dist/run.mjs"
   },
@@ -46,7 +54,6 @@
   "dependencies": {
     "cac": "^6.7.14",
     "consola": "^3.4.2",
-    "fast-glob": "^3.3.3",
     "js-yaml": "npm:@zkochan/js-yaml@0.0.10",
     "pnpm-multi-versions": "^0.5.4",
     "unconfig": "^7.4.1"
@@ -65,7 +72,7 @@
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=20.19.0"
+    "node": ">=22.14.0"
   },
   "prettier": "@sxzz/prettier-config"
 }

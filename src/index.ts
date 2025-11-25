@@ -1,10 +1,9 @@
-import { readFile, unlink, writeFile } from 'node:fs/promises'
+import { glob, readFile, unlink, writeFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'
 import path from 'node:path'
 import process from 'node:process'
 import { toArray } from '@antfu/utils'
 import consola from 'consola'
-import glob from 'fast-glob'
 import { loadConfig } from 'unconfig'
 import type { Config, Context } from './types'
 
@@ -19,6 +18,19 @@ export function defineConfig(config: Config): Config {
   return config
 }
 
+export async function globAsync(
+  include: string | string[],
+  exclude: string[],
+  cwd: string,
+): Promise<string[]> {
+  const iter = glob(include, { exclude, cwd })
+  const matched: string[] = []
+  for await (const file of iter) {
+    matched.push(path.resolve(cwd, file))
+  }
+  return matched
+}
+
 export async function run({
   write = true,
   check,
@@ -29,11 +41,11 @@ export async function run({
   const { config, source } = await getConfig()
 
   for (const item of Array.from(config)) {
-    const files = await glob(item.include, {
-      ignore: toArray(item.exclude),
-      absolute: true,
-      cwd: path.dirname(source),
-    })
+    const files = await globAsync(
+      item.include,
+      toArray(item.exclude),
+      path.dirname(source),
+    )
 
     for (const filePath of files) {
       if (check) consola.info(`Checking ${filePath}`)
