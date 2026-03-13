@@ -60,6 +60,9 @@
     "pnpm-multi-versions": "^0.6.1",
     "unconfig": "^7.5.0"
   },
+  "inlinedDependencies": {
+    "@antfu/utils": "9.3.0"
+  },
   "devDependencies": {
     "@antfu/utils": "^9.3.0",
     "@sxzz/eslint-config": "^7.8.3",
@@ -75,8 +78,5 @@
     "typescript": "^5.9.3",
     "unrun": "^0.2.32"
   },
-  "prettier": "@sxzz/prettier-config",
-  "inlinedDependencies": {
-    "@antfu/utils": "9.3.0"
-  }
+  "prettier": "@sxzz/prettier-config"
 }
