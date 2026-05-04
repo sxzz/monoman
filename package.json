@@ -65,7 +65,7 @@
   },
   "devDependencies": {
     "@antfu/utils": "^9.3.0",
-    "@sxzz/eslint-config": "^7.8.3",
+    "@sxzz/eslint-config": "^8.0.0",
     "@sxzz/prettier-config": "^2.3.1",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^25.5.0",
