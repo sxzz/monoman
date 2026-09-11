@@ -2,7 +2,7 @@
   "name": "monoman",
   "type": "module",
   "version": "0.8.2",
-  "packageManager": "pnpm@11.1.0",
+  "packageManager": "pnpm@12.4.1",
   "description": "Manage monorepo common files.",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
