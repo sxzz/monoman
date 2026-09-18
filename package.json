@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/sxzz/monoman/issues"
   },
+  "sideEffects": [
+    "./dist/run.mjs"
+  ],
   "exports": {
     ".": "./dist/index.mjs",
     "./cli": "./dist/cli.mjs",
